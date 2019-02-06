@@ -151,20 +151,3 @@ mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
 
-<<<<<<< HEAD
-#simply testing ungit - back to master
-    
-#hook.subscribe.client_focus(itzamna)
-#hook.subscribe.startup(itzamna)
-#hook.subscribe.client_new(itzamna)
-#    subprocess.call('python2 /home/akara/itz_script.py', shell=True)
-#    subprocess.call('abiword')
-#    i=Itzamna()
-#    itzTimer()
-    
-#def itzTimer():
-#    Timer(5.0, itzTimer).start()
-#    i.check()
-
-=======
->>>>>>> no-itzamna
