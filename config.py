@@ -165,6 +165,8 @@ floating_layout = layout.Floating()
 mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
+
+#simply testing ungit usage
     
 #hook.subscribe.client_focus(itzamna)
 #hook.subscribe.startup(itzamna)
