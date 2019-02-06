@@ -166,7 +166,7 @@ mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
 
-#simply testing ungit usage
+#simply testing ungit usage again
     
 #hook.subscribe.client_focus(itzamna)
 #hook.subscribe.startup(itzamna)
