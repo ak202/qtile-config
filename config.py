@@ -153,10 +153,10 @@ screens = [
     ),
 ]
 
-#@hook.subscribe.startup
-#def itzamna():
-#    from itzamna import itz_script
-    #subprocess.Popen(itz_script)
+@hook.subscribe.startup
+def itzamna():
+    from itzamna import itz_script
+    subprocess.Popen(itz_script)
     
 main = None
 follow_mouse_focus = True
@@ -165,18 +165,16 @@ floating_layout = layout.Floating()
 mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
-
-#simply testing ungit - back to master
     
-#hook.subscribe.client_focus(itzamna)
-#hook.subscribe.startup(itzamna)
-#hook.subscribe.client_new(itzamna)
-#    subprocess.call('python2 /home/akara/itz_script.py', shell=True)
-#    subprocess.call('abiword')
-#    i=Itzamna()
-#    itzTimer()
+hook.subscribe.client_focus(itzamna)
+hook.subscribe.startup(itzamna)
+hook.subscribe.client_new(itzamna)
+    subprocess.call('python2 /home/akara/itz_script.py', shell=True)
+    subprocess.call('abiword')
+    i=Itzamna()
+    itzTimer()
     
-#def itzTimer():
-#    Timer(5.0, itzTimer).start()
-#    i.check()
+def itzTimer():
+    Timer(5.0, itzTimer).start()
+    i.check()
 
