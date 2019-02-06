@@ -4,15 +4,6 @@ from libqtile import layout, bar, widget, hook
 import subprocess
 
 mod = "mod4"
-#fluxb = False
-
-#def flux():
-#    if not fluxb:
-#        lazy.spawn('xflux -z 02144')
-#        fluxb = True
-#    else:
-#        lazy.spawn('killall xflux')
-#        fluxb = False    
 
 keys = [
     # Switch between windows in current stack pane
@@ -77,7 +68,6 @@ keys = [
     Key([mod, 'shift'], "z", lazy.spawn("eclipse")),
     Key([mod], "m", lazy.spawn("python2 itz_script.py")),
     Key([mod, 'shift'], "x", lazy.spawn("bash ss")),
-#    Key([mod], "l", flux()),
     Key([mod, "shift"], "j", lazy.layout.grow()),
     Key([mod], "j", lazy.layout.shrink()),  
     Key([mod], "y", lazy.spawn("bash ss")),  
