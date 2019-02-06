@@ -153,11 +153,6 @@ screens = [
     ),
 ]
 
-#@hook.subscribe.startup
-#def itzamna():
-#    from itzamna import itz_script
-    #subprocess.Popen(itz_script)
-    
 main = None
 follow_mouse_focus = True
 cursor_warp = False
@@ -166,6 +161,7 @@ mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
 
+<<<<<<< HEAD
 #simply testing ungit - back to master
     
 #hook.subscribe.client_focus(itzamna)
@@ -180,3 +176,5 @@ widget_defaults = {}
 #    Timer(5.0, itzTimer).start()
 #    i.check()
 
+=======
+>>>>>>> no-itzamna
