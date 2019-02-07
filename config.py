@@ -59,8 +59,8 @@ keys = [
     
     Key([mod, 'control'], "q", lazy.spawn("audacious -r")),
     Key([mod, 'control'], "e", lazy.spawn("audacious -f")),
-    Key([mod, 'shift'], "1", lazy.spawn("xflux -z 02144")),
-    Key([mod, 'shift'], "2", lazy.spawn("killall xflux")),
+    Key([mod, 'shift'], "1", lazy.spawn("redshift -O 5000")),
+    Key([mod, 'shift'], "2", lazy.spawn("redshift -x")),
     Key([mod], "e", lazy.spawn("sakura")),
     Key([mod], "c", lazy.spawn("thunar")),
     Key([mod], "x", lazy.spawn("firefox")),
