@@ -151,3 +151,8 @@ mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
 
+@hook.subscribe.startup_complete
+def xrandr():
+	args = ['/bin/bash', '/home/akara/multihead']
+	subprocess.Popen(args)
+
