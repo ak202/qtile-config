@@ -1,6 +1,7 @@
-from libqtile.config import Key, Screen, Group
+from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
+
 import subprocess
 
 mod = "mod4"
@@ -66,7 +67,7 @@ keys = [
     Key([mod], "e", lazy.spawn("sakura")),
     Key([mod], "c", lazy.spawn("thunar")),
     Key([mod], "x", lazy.spawn("firefox")),
-    Key([mod], "z", lazy.spawn("thunderbird")),
+    Key([mod], "z", lazy.spawn("nvim-gtk")),
     Key([mod, 'shift'], "z", lazy.spawn("eclipse")),
     Key([mod], "m", lazy.spawn("python2 itz_script.py")),
     Key([mod, 'shift'], "x", lazy.spawn("bash ss")),
@@ -133,25 +134,45 @@ screens = [
                         widget.GroupBox(),
                         widget.Prompt(),
                         widget.WindowName(),
-                        widget.TextBox("", name="bg"),
-                        widget.TextBox("", name="task"),
-                        widget.TextBox("", name="wl"),    
-                        widget.TextBox("", name="points"),
                         widget.Systray(),
-                        widget.Clock(),
+                        widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                     ],
                     30,
                 ),
     ),
 ]
 
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front())
+]
+
 main = None
 follow_mouse_focus = True
 cursor_warp = False
 floating_layout = layout.Floating()
-mouse = ()
 auto_fullscreen = True
 widget_defaults = {}
+
+floating_layout = layout.Floating(float_rules=[
+    {'wmclass': 'confirm'},
+    {'wmclass': 'dialog'},
+    {'wmclass': 'download'},
+    {'wmclass': 'error'},
+    {'wmclass': 'file_progress'},
+    {'wmclass': 'notification'},
+    {'wmclass': 'splash'},
+    {'wmclass': 'toolbar'},
+    {'wmclass': 'confirmreset'},  # gitk
+    {'wmclass': 'makebranch'},  # gitk
+    {'wmclass': 'maketag'},  # gitk
+    {'wname': 'branchdialog'},  # gitk
+    {'wname': 'pinentry'},  # GPG key password entry
+    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+])
 
 @hook.subscribe.startup_complete
 def xrandr():
